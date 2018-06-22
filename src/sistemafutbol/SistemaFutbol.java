@@ -15,7 +15,7 @@ public class SistemaFutbol {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Ella no te ama");
+        System.out.println("Ella no te ama :´v");
     }
     
 }
