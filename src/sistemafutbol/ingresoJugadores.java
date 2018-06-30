@@ -101,7 +101,7 @@ public class ingresoJugadores extends javax.swing.JFrame {
         });
         getContentPane().add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, 102, 30));
 
-        idequipo.setText("Equipo:");
+        idequipo.setText("id equipo");
         getContentPane().add(idequipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 240, 60, -1));
         getContentPane().add(txtidequipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 240, 140, -1));
 
@@ -119,6 +119,7 @@ public class ingresoJugadores extends javax.swing.JFrame {
         txtCarnet.setText(null);
         txtNombres.setText(null);
         txtApellidos.setText(null);
+        txtidequipo.setText(null);
         txtCarrera.setText(null);
     }
     
@@ -126,13 +127,14 @@ public class ingresoJugadores extends javax.swing.JFrame {
       
     
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-         if(!txtCarnet.getText().isEmpty() && !txtNombres.getText().isEmpty() && !txtApellidos.getText().isEmpty() && !txtCarrera.getText().isEmpty()){
+         if(!txtCarnet.getText().isEmpty() && !txtNombres.getText().isEmpty() && !txtApellidos.getText().isEmpty() && !txtidequipo.getText().isEmpty() && !txtCarrera.getText().isEmpty()){
         sqlJugadores mas = new sqlJugadores();
         jugadores met = new jugadores();
         
         met.setCarnet(txtCarnet.getText());
         met.setNombres(txtNombres.getText());
         met.setApellidos(txtApellidos.getText());
+        met.setIdequipo(txtidequipo.getText());
         met.setCarrera(txtCarrera.getText());
         if(mas.registrar(met)){
             JOptionPane.showMessageDialog(null, "Se han ingresado los datos correctamente");
@@ -165,7 +167,7 @@ public class ingresoJugadores extends javax.swing.JFrame {
         if(!txtCarnet.getText().isEmpty() && !txtNombres.getText().isEmpty() && !txtApellidos.getText().isEmpty() && !txtCarrera.getText().isEmpty()){
          sjr = new sqlJugadores();
         
-        jo = new jugadores(txtCarnet.getText().toLowerCase(), txtNombres.getText().toLowerCase(), txtApellidos.getText().toLowerCase(), txtCarrera.getText().toLowerCase());
+        jo = new jugadores(txtCarnet.getText().toLowerCase(), txtNombres.getText().toLowerCase(), txtApellidos.getText().toLowerCase(),txtidequipo.getText().toLowerCase(), txtCarrera.getText().toLowerCase());
         sjr.updateJugador(jo);   
         }else{
             JOptionPane.showMessageDialog(null, "Debe de llenar todos los campos de informacion");
@@ -180,6 +182,7 @@ public class ingresoJugadores extends javax.swing.JFrame {
         jo = sjr.buscarJugador(txtCarnet.getText());
         txtNombres.setText(jo.getNombres());
         txtApellidos.setText(jo.getApellidos());
+        txtidequipo.setText(jo.getIdequipo());
         txtCarrera.setText(jo.getCarrera());
         
       }else{

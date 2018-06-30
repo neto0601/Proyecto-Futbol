@@ -18,13 +18,14 @@ public class sqlJugadores extends conexion{
         PreparedStatement ps = null;
         Connection con = getConexion();
 
-        String sql = "INSERT INTO jugadores (carnet, nombres, apellidos, carrera) VALUES (?,?,?,?)";
+        String sql = "INSERT INTO jugadores (carnet, nombres, apellidos,IdEquipo, carrera) VALUES (?,?,?,?,?)";
         try {
             ps = con.prepareStatement(sql);
             ps.setString(1, jds.getCarnet().toLowerCase());
             ps.setString(2, jds.getNombres().toLowerCase());
             ps.setString(3, jds.getApellidos().toLowerCase());
-            ps.setString(4, jds.getCarrera().toLowerCase());
+            ps.setString(4, jds.getIdequipo().toLowerCase());
+            ps.setString(5, jds.getCarrera().toLowerCase());
             ps.execute();
             return true;
             
@@ -56,13 +57,14 @@ public class sqlJugadores extends conexion{
          PreparedStatement ps = null;
         Connection con = getConexion();
 
-        String sql = "UPDATE juguadores SET nombres = ?, apellidos = ?, carrera= ? WHERE carnet = ?";
+        String sql = "UPDATE juguadores SET nombres = ?, apellidos = ?, IdEquipo=?, carrera= ? WHERE carnet = ?";
         try {
             ps = con.prepareStatement(sql);
             ps.setString(1, jo.getNombres());
             ps.setString(2, jo.getApellidos());
             ps.setString(3, jo.getCarrera());
-            ps.setString(4, jo.getCarnet());
+            ps.setString(4, jo.getIdequipo());
+            ps.setString(5, jo.getCarnet());
             
             ps.execute();
             return true;
@@ -86,8 +88,9 @@ public class sqlJugadores extends conexion{
              jo.setCarnet(rs.getString("carnet"));
              jo.setNombres(rs.getString("nombres"));
              jo.setApellidos(rs.getString("apellidos"));
+             jo.setIdequipo(rs.getString("IdEquipo"));
              jo.setCarrera(rs.getString("carrera"));
-             
+            
          }
         } catch (Exception e) {
             
