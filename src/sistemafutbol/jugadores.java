@@ -4,9 +4,10 @@ package sistemafutbol;
 
 public class jugadores {
     
-    private String carnet, nombres, apellidos,IdEquipo, carrera;
+    private String carnet, nombres, apellidos, carrera;
+    private int IdEquipo;
 
-    public jugadores(String carnet, String nombres, String apellidos,String IdEquipo, String carrera) {
+    public jugadores(String carnet, String nombres, String apellidos,int IdEquipo, String carrera) {
         this.carnet = carnet;
         this.nombres = nombres;
         this.apellidos = apellidos;
@@ -30,8 +31,8 @@ public class jugadores {
         return nombres;
     }
 
-    public void setNombres(String nombre) {
-        this.nombres = nombre;
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
 
     public String getApellidos() {
@@ -41,12 +42,12 @@ public class jugadores {
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
     }
-    public String getIdequipo() {
+    public int getIdequipo() {
         return IdEquipo;
     }
 
-    public void setIdequipo(String idequipo) {
-        this.IdEquipo = idequipo;
+    public void setIdequipo(int IdEquipo) {
+        this.IdEquipo = IdEquipo;
     }
 
     public String getCarrera() {
