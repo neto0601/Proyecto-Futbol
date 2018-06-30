@@ -106,7 +106,7 @@ public class ingresoJugadores extends javax.swing.JFrame {
         getContentPane().add(txtidequipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 240, 140, -1));
 
         try {
-            txtCarnet.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("??#####")));
+            txtCarnet.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("UU#####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
