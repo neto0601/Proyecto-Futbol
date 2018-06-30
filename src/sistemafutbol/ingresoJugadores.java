@@ -165,7 +165,7 @@ public class ingresoJugadores extends javax.swing.JFrame {
         if(!txtCarnet.getText().isEmpty() && !txtNombres.getText().isEmpty() && !txtApellidos.getText().isEmpty() && !txtCarrera.getText().isEmpty()){
          sjr = new sqlJugadores();
         
-        jo = new jugadores(txtCarnet.getText().toLowerCase(), txtNombres.getText().toLowerCase(), txtApellidos.getText().toLowerCase(), txtCarrera.getText().toLowerCase());
+        jo = new jugadores(txtCarnet.getText(), txtNombres.getText(), txtApellidos.getText(), txtCarrera.getText());
         sjr.updateJugador(jo);   
         }else{
             JOptionPane.showMessageDialog(null, "Debe de llenar todos los campos de informacion");
