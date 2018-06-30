@@ -51,12 +51,12 @@ public class sqlJugadores extends conexion{
         
     }
     
-    public boolean updateMascota(jugadores jo){
+    public boolean updateJugador(jugadores jo){
     
          PreparedStatement ps = null;
         Connection con = getConexion();
 
-        String sql = "UPDATE mascotas SET nombres = ?, apellidos = ?, carrera= ? WHERE carnet = ?";
+        String sql = "UPDATE juguadores SET nombres = ?, apellidos = ?, carrera= ? WHERE carnet = ?";
         try {
             ps = con.prepareStatement(sql);
             ps.setString(1, jo.getNombres());

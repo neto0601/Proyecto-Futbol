@@ -1,6 +1,8 @@
 
 package sistemafutbol;
 
+
+
 import javax.swing.JOptionPane;
 
 
@@ -100,11 +102,15 @@ public class ingresoJugadores extends javax.swing.JFrame {
         getContentPane().add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, 102, 30));
 
         idequipo.setText("Equipo:");
-        getContentPane().add(idequipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 240, 40, -1));
-        getContentPane().add(txtidequipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 240, 130, -1));
+        getContentPane().add(idequipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 240, 60, -1));
+        getContentPane().add(txtidequipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 240, 140, -1));
 
-        txtCarnet.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("¤¤#####"))));
-        getContentPane().add(txtCarnet, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 110, -1));
+        try {
+            txtCarnet.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("??#####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        getContentPane().add(txtCarnet, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 270, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -117,6 +123,7 @@ public class ingresoJugadores extends javax.swing.JFrame {
     }
     
     
+      
     
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
          if(!txtCarnet.getText().isEmpty() && !txtNombres.getText().isEmpty() && !txtApellidos.getText().isEmpty() && !txtCarrera.getText().isEmpty()){
@@ -147,7 +154,7 @@ public class ingresoJugadores extends javax.swing.JFrame {
            sjr = new sqlJugadores();       
            sjr.Eliminar(txtCarnet.getText());
        }else{
-           JOptionPane.showMessageDialog(null,"Debe de introducir el id de la mascota para eliminar el registro");
+           JOptionPane.showMessageDialog(null,"Debe de introducir el carnet del jugador para eliminar el registro");
        }
         
         
@@ -159,7 +166,7 @@ public class ingresoJugadores extends javax.swing.JFrame {
          sjr = new sqlJugadores();
         
         jo = new jugadores(txtCarnet.getText().toLowerCase(), txtNombres.getText().toLowerCase(), txtApellidos.getText().toLowerCase(), txtCarrera.getText().toLowerCase());
-        sjr.updateMascota(jo);   
+        sjr.updateJugador(jo);   
         }else{
             JOptionPane.showMessageDialog(null, "Debe de llenar todos los campos de informacion");
         }
