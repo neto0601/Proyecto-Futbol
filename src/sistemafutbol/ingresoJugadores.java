@@ -38,6 +38,7 @@ public class ingresoJugadores extends javax.swing.JFrame {
         txtidequipo = new javax.swing.JTextField();
         txtCarnet = new javax.swing.JFormattedTextField();
         btnSalir = new javax.swing.JButton();
+        btnmenu2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("JUGADORES");
@@ -124,6 +125,14 @@ public class ingresoJugadores extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 340, 110, 30));
+
+        btnmenu2.setText("REGRESAR");
+        btnmenu2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmenu2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnmenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 400, 130, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -217,6 +226,12 @@ public class ingresoJugadores extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_btnSalirActionPerformed
 
+    private void btnmenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenu2ActionPerformed
+        MENU ab = new MENU();
+        ab.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnmenu2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -264,6 +279,7 @@ public class ingresoJugadores extends javax.swing.JFrame {
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnSalir;
+    private javax.swing.JButton btnmenu2;
     private javax.swing.JLabel idequipo;
     private javax.swing.JTextField txtApellidos;
     private javax.swing.JFormattedTextField txtCarnet;

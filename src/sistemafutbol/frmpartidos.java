@@ -27,6 +27,7 @@ public class frmpartidos extends javax.swing.JFrame {
     int mayor = 0;
     public frmpartidos() {
         initComponents();
+        setLocationRelativeTo(null);
         txtidpartido.setEnabled(false);
         txtequipol.setEnabled(false);
         txtequipov.setEnabled(false);
@@ -85,6 +86,7 @@ public class frmpartidos extends javax.swing.JFrame {
         btnmodificar = new javax.swing.JButton();
         btnguardarmodificacion = new javax.swing.JButton();
         btncancelar = new javax.swing.JButton();
+        btnmenu2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PARTIDOS");
@@ -140,7 +142,7 @@ public class frmpartidos extends javax.swing.JFrame {
         getContentPane().add(ftxtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 100, -1));
 
         lblformatoF.setText("( dd-MM-yyyy )");
-        getContentPane().add(lblformatoF, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 80, -1));
+        getContentPane().add(lblformatoF, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 80, -1));
 
         btnnuevo.setText("NUEVO");
         btnnuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -197,6 +199,14 @@ public class frmpartidos extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btncancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 90, -1));
+
+        btnmenu2.setText("REGRESAR");
+        btnmenu2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmenu2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnmenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 130, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -499,6 +509,12 @@ public class frmpartidos extends javax.swing.JFrame {
        Bloquear();
     }//GEN-LAST:event_btncancelarActionPerformed
 
+    private void btnmenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenu2ActionPerformed
+        MENU ab = new MENU();
+        ab.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnmenu2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -540,6 +556,7 @@ public class frmpartidos extends javax.swing.JFrame {
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnguardar;
     private javax.swing.JButton btnguardarmodificacion;
+    private javax.swing.JButton btnmenu2;
     private javax.swing.JButton btnmodificar;
     private javax.swing.JButton btnnuevo;
     private javax.swing.JFormattedTextField ftxtFecha;

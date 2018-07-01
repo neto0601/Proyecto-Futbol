@@ -24,6 +24,7 @@ public class frmtipos_hechos extends javax.swing.JFrame {
     int mayor = 0;
     public frmtipos_hechos() {
         initComponents();
+        setLocationRelativeTo(null);
         txtidtipo.setEnabled(false);
         txtdescripcion.setEnabled(false);
     }
@@ -61,6 +62,7 @@ public class frmtipos_hechos extends javax.swing.JFrame {
         btnmodificar = new javax.swing.JButton();
         btnguardarmodificacion = new javax.swing.JButton();
         btncancelar = new javax.swing.JButton();
+        btnmenu2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("TIPOS_HECHOS");
@@ -135,6 +137,14 @@ public class frmtipos_hechos extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btncancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 90, -1));
+
+        btnmenu2.setText("REGRESAR");
+        btnmenu2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmenu2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnmenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 130, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -285,6 +295,12 @@ public class frmtipos_hechos extends javax.swing.JFrame {
         Bloquear();
     }//GEN-LAST:event_btncancelarActionPerformed
 
+    private void btnmenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenu2ActionPerformed
+        MENU ab = new MENU();
+        ab.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnmenu2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -326,6 +342,7 @@ public class frmtipos_hechos extends javax.swing.JFrame {
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnguardar;
     private javax.swing.JButton btnguardarmodificacion;
+    private javax.swing.JButton btnmenu2;
     private javax.swing.JButton btnmodificar;
     private javax.swing.JButton btnnuevo;
     private javax.swing.JLabel lbldescripcion;

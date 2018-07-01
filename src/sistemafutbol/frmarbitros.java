@@ -24,6 +24,7 @@ public class frmarbitros extends javax.swing.JFrame {
     int mayor = 0;
     public frmarbitros() {
         initComponents();
+        setLocationRelativeTo(null);
          txtidarbitro.setEnabled(false);
         txtnombres.setEnabled(false);
         txtapellidos.setEnabled(false);
@@ -68,6 +69,7 @@ public class frmarbitros extends javax.swing.JFrame {
         btnmodificar = new javax.swing.JButton();
         btnguardarmodificacion = new javax.swing.JButton();
         btncancelar = new javax.swing.JButton();
+        btnmenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ARBITROS");
@@ -152,6 +154,14 @@ public class frmarbitros extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btncancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 90, -1));
+
+        btnmenu.setText("REGRESAR");
+        btnmenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmenuActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 130, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -318,6 +328,12 @@ public class frmarbitros extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtapellidosKeyTyped
 
+    private void btnmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenuActionPerformed
+        MENU ab = new MENU();
+        ab.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnmenuActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -357,8 +373,11 @@ public class frmarbitros extends javax.swing.JFrame {
     private javax.swing.JButton btnbuscar;
     private javax.swing.JButton btncancelar;
     private javax.swing.JButton btneliminar;
+    private javax.swing.JButton btnequipos;
+    private javax.swing.JButton btnequipos1;
     private javax.swing.JButton btnguardar;
     private javax.swing.JButton btnguardarmodificacion;
+    private javax.swing.JButton btnmenu;
     private javax.swing.JButton btnmodificar;
     private javax.swing.JButton btnnuevo;
     private javax.swing.JLabel lblapellidos;
