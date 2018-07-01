@@ -13,37 +13,41 @@ import javax.swing.JOptionPane;
  *
  * @author H ERICK
  */
-public class frmarbitros extends javax.swing.JFrame {
+public class frmarbitros_partidos extends javax.swing.JFrame {
 
-   ResultSet rs = null;
-    arbitros ac = new arbitros(); 
+    ResultSet rs = null;
+    arbitros_partidos ac = new arbitros_partidos(); 
     boolean registro = false;
     boolean prueba = false;
     boolean newRecord = false;
     int cantidad = 0;
     int mayor = 0;
-    public frmarbitros() {
+    public frmarbitros_partidos() {
         initComponents();
-         txtidarbitro.setEnabled(false);
-        txtnombres.setEnabled(false);
-        txtapellidos.setEnabled(false);
-       
-    }
-     private void Bloquear(){
+        txtregistro.setEnabled(false);
         txtidarbitro.setEnabled(false);
-        txtnombres.setEnabled(false);
-        txtapellidos.setEnabled(false);
+        txtidpartido.setEnabled(false);
+        txtpuesto.setEnabled(false);
+        
+    }
+    private void Bloquear(){
+        txtregistro.setEnabled(false);
+        txtidarbitro.setEnabled(false);
+        txtidpartido.setEnabled(false);
+        txtpuesto.setEnabled(false);
         }
         
         private void Desbloquear() {
-       txtnombres.setEnabled(true);
-       txtapellidos.setEnabled(true);
-      }
+       txtidarbitro.setEnabled(true);
+       txtidpartido.setEnabled(true);
+       txtpuesto.setEnabled(true);
+       }
         
         private void Limpiar() {
-       txtnombres.setText("");
-       txtapellidos.setText("");
-      
+       txtidarbitro.setText("");
+       txtidpartido.setText("");
+       txtpuesto.setText("");
+       
     }
 
     /**
@@ -55,12 +59,14 @@ public class frmarbitros extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblregistro = new javax.swing.JLabel();
+        txtregistro = new javax.swing.JTextField();
         lblidarbitro = new javax.swing.JLabel();
         txtidarbitro = new javax.swing.JTextField();
-        lblnombres = new javax.swing.JLabel();
-        txtnombres = new javax.swing.JTextField();
-        lblapellidos = new javax.swing.JLabel();
-        txtapellidos = new javax.swing.JTextField();
+        lblidpartido = new javax.swing.JLabel();
+        txtidpartido = new javax.swing.JTextField();
+        lblpuesto = new javax.swing.JLabel();
+        txtpuesto = new javax.swing.JTextField();
         btnnuevo = new javax.swing.JButton();
         btnguardar = new javax.swing.JButton();
         btnbuscar = new javax.swing.JButton();
@@ -70,32 +76,42 @@ public class frmarbitros extends javax.swing.JFrame {
         btncancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("ARBITROS");
+        setTitle("ARBITROS_PARTIDOS");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblregistro.setText("REGISTRO:");
+        getContentPane().add(lblregistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        getContentPane().add(txtregistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 50, -1));
+
         lblidarbitro.setText("ID ARBITRO:");
-        getContentPane().add(lblidarbitro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
-        getContentPane().add(txtidarbitro, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 50, -1));
+        getContentPane().add(lblidarbitro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
-        lblnombres.setText("NOMBRES:");
-        getContentPane().add(lblnombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
-
-        txtnombres.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtidarbitro.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtnombresKeyTyped(evt);
+                txtidarbitroKeyTyped(evt);
             }
         });
-        getContentPane().add(txtnombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 130, -1));
+        getContentPane().add(txtidarbitro, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 130, -1));
 
-        lblapellidos.setText("APELLIDOS:");
-        getContentPane().add(lblapellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, 20));
+        lblidpartido.setText("ID PARTIDO:");
+        getContentPane().add(lblidpartido, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, 20));
 
-        txtapellidos.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtidpartido.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtapellidosKeyTyped(evt);
+                txtidpartidoKeyTyped(evt);
             }
         });
-        getContentPane().add(txtapellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 130, -1));
+        getContentPane().add(txtidpartido, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 130, -1));
+
+        lblpuesto.setText("PUESTO:");
+        getContentPane().add(lblpuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
+
+        txtpuesto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtpuestoKeyTyped(evt);
+            }
+        });
+        getContentPane().add(txtpuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 190, -1));
 
         btnnuevo.setText("NUEVO");
         btnnuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +119,7 @@ public class frmarbitros extends javax.swing.JFrame {
                 btnnuevoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 120, -1));
+        getContentPane().add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 120, -1));
 
         btnguardar.setText("GUARDAR");
         btnguardar.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +127,7 @@ public class frmarbitros extends javax.swing.JFrame {
                 btnguardarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, -1, -1));
+        getContentPane().add(btnguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, -1, -1));
 
         btnbuscar.setText("BUSCAR");
         btnbuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +135,7 @@ public class frmarbitros extends javax.swing.JFrame {
                 btnbuscarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 120, -1));
+        getContentPane().add(btnbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 120, -1));
 
         btneliminar.setText("ELIMINAR");
         btneliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -127,7 +143,7 @@ public class frmarbitros extends javax.swing.JFrame {
                 btneliminarActionPerformed(evt);
             }
         });
-        getContentPane().add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, -1, -1));
+        getContentPane().add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, -1, -1));
 
         btnmodificar.setText("MODIFICAR");
         btnmodificar.addActionListener(new java.awt.event.ActionListener() {
@@ -135,7 +151,7 @@ public class frmarbitros extends javax.swing.JFrame {
                 btnmodificarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, -1, -1));
+        getContentPane().add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, -1, -1));
 
         btnguardarmodificacion.setText("GUARDAR MODIFICACIÓN");
         btnguardarmodificacion.addActionListener(new java.awt.event.ActionListener() {
@@ -143,7 +159,7 @@ public class frmarbitros extends javax.swing.JFrame {
                 btnguardarmodificacionActionPerformed(evt);
             }
         });
-        getContentPane().add(btnguardarmodificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 190, -1));
+        getContentPane().add(btnguardarmodificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 190, -1));
 
         btncancelar.setText("CANCELAR");
         btncancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -151,7 +167,7 @@ public class frmarbitros extends javax.swing.JFrame {
                 btncancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(btncancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 90, -1));
+        getContentPane().add(btncancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 90, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -173,19 +189,19 @@ public class frmarbitros extends javax.swing.JFrame {
                         mayor = rs.getInt(1) + 1;
                         //recuerde que debe completar 5 digitos
                         if (mayor < 10) {
-                            txtidarbitro.setText("0000" + mayor);
+                            txtregistro.setText("0000" + mayor);
                         } else if (mayor < 100) {
-                            this.txtidarbitro.setText("000" + mayor);
+                            this.txtregistro.setText("000" + mayor);
                         } else if (mayor < 1000) {
-                            txtidarbitro.setText("00" + mayor);
+                            txtregistro.setText("00" + mayor);
                         } else if (mayor < 10000) {
-                            txtidarbitro.setText("0" + mayor);
+                            txtregistro.setText("0" + mayor);
                         } else {
-                            txtidarbitro.setText("" + mayor);
+                            txtregistro.setText("" + mayor);
                         }
                     }
                 } else {
-                    txtidarbitro.setText("0000"+1);
+                    txtregistro.setText("0000"+1);
                 }
             }
         } catch (SQLException ex) {
@@ -193,44 +209,50 @@ public class frmarbitros extends javax.swing.JFrame {
         }
         Desbloquear();
         Limpiar();
-        this.txtnombres.requestFocus();
+        this.txtidarbitro.requestFocus();
         newRecord = true;
     }//GEN-LAST:event_btnnuevoActionPerformed
 
     private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
 
         if (newRecord == true) {
-            if (this.txtidarbitro.getText().equals("")) {
-                JOptionPane.showMessageDialog(rootPane, "Debe existir un ID de Arbitro", "AVISO DEL SISTEMA", 2);
-            }
-            else if (this.txtnombres.getText().equals("")) {
-                JOptionPane.showMessageDialog(rootPane, "Debe llenar el campo Nombre", "AVISO DEL SISTEMA", 2);
-                this.txtnombres.requestFocus();
-            }
-            else if (this.txtapellidos.getText().equals("")) {
-                JOptionPane.showMessageDialog(rootPane, "Debe llenar el campo Apellidos", "AVISO DEL SISTEMA", 2);
-                this.txtapellidos.requestFocus();
-            }
-            else{
-                ac.insertar(this.txtidarbitro.getText(), this.txtnombres.getText().toUpperCase(),this.txtapellidos.getText().toUpperCase());}
-            JOptionPane.showMessageDialog(rootPane, "Registro guardado exitosamente!!", "AVISO DEL SISTEMA", 1);
-            Bloquear();
-            Limpiar();
-            this.txtidarbitro.setText("");
-            newRecord = false;
-
+            if (this.txtregistro.getText().equals("")) {
+                JOptionPane.showMessageDialog(rootPane, "Debe existir un numero de registro", "AVISO DEL SISTEMA", 2);
+            } else if (this.txtidarbitro.getText().equals("")) {
+                JOptionPane.showMessageDialog(rootPane, "Debe llenar el campo ID ARBITRO", "AVISO DEL SISTEMA", 2);
+                this.txtidarbitro.requestFocus();
+            }else if (this.txtidpartido.getText().equals("")) {
+                JOptionPane.showMessageDialog(rootPane, "Debe llenar el campo ID PARTIDO", "AVISO DEL SISTEMA", 2);
+                this.txtidpartido.requestFocus();
+            } else if (this.txtpuesto.getText().equals("")) {
+                JOptionPane.showMessageDialog(rootPane, "Debe llenar el campo PUESTO", "AVISO DEL SISTEMA", 2);
+                this.txtpuesto.requestFocus();
+            } else {
+                        //atentos, el sexo estÃ¡ con radio buttons
+                     
+                            ac.insertar(this.txtregistro.getText(), this.txtidarbitro.getText().toUpperCase(), this.txtidpartido.getText().toUpperCase(), this.txtpuesto.getText().toUpperCase());
+                        JOptionPane.showMessageDialog(rootPane, "Registro guardado exitosamente!!", "AVISO DEL SISTEMA", 1);
+                        Bloquear();
+                        Limpiar();
+                        this.txtregistro.setText("");
+                        newRecord = false;
+                   
+                }
+            
         }
     }//GEN-LAST:event_btnguardarActionPerformed
 
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
 
-        String codigo = JOptionPane.showInputDialog("Ingrese el ID del Arbitro a Busacar:");
+        String codigo = JOptionPane.showInputDialog("Ingrese el codigo de Actor a buscar:");
         rs = ac.buscar(codigo);
         try {
             while (rs.next()) {
-                this.txtidarbitro.setText(rs.getString(1));
-                this.txtnombres.setText(rs.getString(2));
-                this.txtapellidos.setText(rs.getString(3));
+                this.txtregistro.setText(rs.getString(1));
+                this.txtidarbitro.setText(rs.getString(2));
+                this.txtidpartido.setText(rs.getString(3));
+                this.txtpuesto.setText(rs.getString(4));
+                
                 prueba = true;
                 registro = true;
                 newRecord = false;
@@ -250,13 +272,13 @@ public class frmarbitros extends javax.swing.JFrame {
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
 
         if (prueba == true) {
-            String codigo = this.txtidarbitro.getText();
+            String codigo = this.txtregistro.getText();
             if (JOptionPane.showConfirmDialog(rootPane, "¿Desea eliminar el registro buscado?") == 0) {
                 ac.eliminar(codigo);
                 JOptionPane.showMessageDialog(rootPane, "Registro eliminado exitosamente!!", "AVISO DEL SISTEMA", 1);
                 Bloquear();
                 Limpiar();
-                this.txtidarbitro.setText("");
+                this.txtregistro.setText("");
                 this.btnnuevo.setVisible(true);
                 this.btnguardar.setVisible(true);
                 prueba = false;
@@ -271,52 +293,63 @@ public class frmarbitros extends javax.swing.JFrame {
     }//GEN-LAST:event_btnmodificarActionPerformed
 
     private void btnguardarmodificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarmodificacionActionPerformed
-               if (prueba == true) {
-            if (this.txtidarbitro.getText().equals("")) {
-                JOptionPane.showMessageDialog(rootPane, "Debe existir un Id de Arbitro", "AVISO DEL SISTEMA", 2);
-            }
-            else if (this.txtnombres.getText().equals("")) {
-                JOptionPane.showMessageDialog(rootPane, "Debe llenar el campo Nombre", "AVISO DEL SISTEMA", 2);
-                this.txtnombres.requestFocus();
-            }
-            else if (this.txtapellidos.getText().equals("")) {
-                JOptionPane.showMessageDialog(rootPane, "Debe llenar el campo apellidos", "AVISO DEL SISTEMA", 2);
-                this.txtapellidos.requestFocus();
-            }
-            else{
-                ac.modificar(this.txtidarbitro.getText(), this.txtnombres.getText().toUpperCase(), this.txtapellidos.getText().toUpperCase());}
-            JOptionPane.showMessageDialog(rootPane, "El registro ha sido correctamente actualizado!!", "AVISO DEL SISTEMA", 1);
-            Bloquear();
-            Limpiar();
-            this.txtidarbitro.setText("");
-            prueba= false;
-            newRecord = false;
-
+        if (prueba == true) {
+            if (this.txtregistro.getText().equals("")) {
+                JOptionPane.showMessageDialog(rootPane, "Debe existir un codigo de registro", "AVISO DEL SISTEMA", 2);
+            } else if (this.txtidarbitro.getText().equals("")) {
+                JOptionPane.showMessageDialog(rootPane, "Debe llenar el campo ID ARBITRO", "AVISO DEL SISTEMA", 2);
+                this.txtidarbitro.requestFocus();
+            } else if (this.txtidpartido.getText().equals("")) {
+                JOptionPane.showMessageDialog(rootPane, "Debe llenar el campo ID PARTIDO", "AVISO DEL SISTEMA", 2);
+                this.txtidpartido.requestFocus();
+            } else if (this.txtpuesto.getText().equals("")) {
+                JOptionPane.showMessageDialog(rootPane, "Debe llenar el campo PUESTO", "AVISO DEL SISTEMA", 2);
+                this.txtpuesto.requestFocus();
+            }else {
+                            ac.modificar(this.txtregistro.getText(), this.txtidarbitro.getText().toUpperCase(), this.txtidpartido.getText().toUpperCase(), this.txtpuesto.getText().toUpperCase());
+                        JOptionPane.showMessageDialog(rootPane, "El registro ha sido correctamente actualizado!!", "AVISO DEL SISTEMA", 1);
+                        Bloquear();
+                        Limpiar();
+                        this.txtregistro.setText("");
+                        prueba= false;
+                        newRecord = false;
+                    
+                }
+            
         }
     }//GEN-LAST:event_btnguardarmodificacionActionPerformed
 
+    private void txtidarbitroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtidarbitroKeyTyped
+         char val=evt.getKeyChar();
+        if(Character.isLetter(val)){
+            getToolkit().beep();
+        evt.consume();
+        }
+    }//GEN-LAST:event_txtidarbitroKeyTyped
+
+    private void txtidpartidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtidpartidoKeyTyped
+        char val=evt.getKeyChar();
+        if(Character.isLetter(val)){
+            getToolkit().beep();
+        evt.consume();
+        }
+    }//GEN-LAST:event_txtidpartidoKeyTyped
+
+    private void txtpuestoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpuestoKeyTyped
+        char val=evt.getKeyChar();
+        if(Character.isDigit(val)){
+            getToolkit().beep();
+        evt.consume();
+        }
+    }//GEN-LAST:event_txtpuestoKeyTyped
+
     private void btncancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelarActionPerformed
+        txtregistro.setText("");
         txtidarbitro.setText("");
-        txtnombres.setText("");
-        txtapellidos.setText("");
+        txtidpartido.setText("");
+        txtpuesto.setText("");
         Bloquear();
     }//GEN-LAST:event_btncancelarActionPerformed
-
-    private void txtnombresKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnombresKeyTyped
-        char val=evt.getKeyChar();
-        if(Character.isDigit(val)){
-            getToolkit().beep();
-            evt.consume();
-        }
-    }//GEN-LAST:event_txtnombresKeyTyped
-
-    private void txtapellidosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtapellidosKeyTyped
-        char val=evt.getKeyChar();
-        if(Character.isDigit(val)){
-            getToolkit().beep();
-            evt.consume();
-        }
-    }//GEN-LAST:event_txtapellidosKeyTyped
 
     /**
      * @param args the command line arguments
@@ -335,20 +368,20 @@ public class frmarbitros extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmarbitros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmarbitros_partidos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmarbitros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmarbitros_partidos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmarbitros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmarbitros_partidos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmarbitros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmarbitros_partidos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmarbitros().setVisible(true);
+                new frmarbitros_partidos().setVisible(true);
             }
         });
     }
@@ -361,11 +394,13 @@ public class frmarbitros extends javax.swing.JFrame {
     private javax.swing.JButton btnguardarmodificacion;
     private javax.swing.JButton btnmodificar;
     private javax.swing.JButton btnnuevo;
-    private javax.swing.JLabel lblapellidos;
     private javax.swing.JLabel lblidarbitro;
-    private javax.swing.JLabel lblnombres;
-    private javax.swing.JTextField txtapellidos;
+    private javax.swing.JLabel lblidpartido;
+    private javax.swing.JLabel lblpuesto;
+    private javax.swing.JLabel lblregistro;
     private javax.swing.JTextField txtidarbitro;
-    private javax.swing.JTextField txtnombres;
+    private javax.swing.JTextField txtidpartido;
+    private javax.swing.JTextField txtpuesto;
+    private javax.swing.JTextField txtregistro;
     // End of variables declaration//GEN-END:variables
 }

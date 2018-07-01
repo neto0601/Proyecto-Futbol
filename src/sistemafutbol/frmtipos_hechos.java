@@ -63,6 +63,7 @@ public class frmtipos_hechos extends javax.swing.JFrame {
         btncancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("TIPOS_HECHOS");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblidtipo.setText("ID TIPO:");
@@ -125,7 +126,7 @@ public class frmtipos_hechos extends javax.swing.JFrame {
                 btnguardarmodificacionActionPerformed(evt);
             }
         });
-        getContentPane().add(btnguardarmodificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, -1, -1));
+        getContentPane().add(btnguardarmodificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 190, -1));
 
         btncancelar.setText("CANCELAR");
         btncancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -133,7 +134,7 @@ public class frmtipos_hechos extends javax.swing.JFrame {
                 btncancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(btncancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, -1, -1));
+        getContentPane().add(btncancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 90, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

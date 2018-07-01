@@ -64,6 +64,7 @@ public class frmequipos extends javax.swing.JFrame {
         btncanelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("EQUIPOS");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblestudio.setText("ID EQUIPO:");
@@ -126,7 +127,7 @@ public class frmequipos extends javax.swing.JFrame {
                 btnguardarmodificacionActionPerformed(evt);
             }
         });
-        getContentPane().add(btnguardarmodificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, -1, -1));
+        getContentPane().add(btnguardarmodificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 190, -1));
 
         btncanelar.setText("CANCELAR");
         btncanelar.addActionListener(new java.awt.event.ActionListener() {
@@ -134,7 +135,7 @@ public class frmequipos extends javax.swing.JFrame {
                 btncanelarActionPerformed(evt);
             }
         });
-        getContentPane().add(btncanelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, -1, -1));
+        getContentPane().add(btncanelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 90, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
