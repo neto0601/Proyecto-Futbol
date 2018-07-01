@@ -37,6 +37,7 @@ public class ingresoJugadores extends javax.swing.JFrame {
         idequipo = new javax.swing.JLabel();
         txtidequipo = new javax.swing.JTextField();
         txtCarnet = new javax.swing.JFormattedTextField();
+        btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -112,6 +113,17 @@ public class ingresoJugadores extends javax.swing.JFrame {
         }
         getContentPane().add(txtCarnet, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 270, -1));
 
+        btnSalir.setText("Salir");
+        btnSalir.setMaximumSize(new java.awt.Dimension(70, 50));
+        btnSalir.setMinimumSize(new java.awt.Dimension(70, 50));
+        btnSalir.setPreferredSize(new java.awt.Dimension(70, 50));
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 340, 110, 30));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -134,7 +146,7 @@ public class ingresoJugadores extends javax.swing.JFrame {
         met.setCarnet(txtCarnet.getText());
         met.setNombres(txtNombres.getText());
         met.setApellidos(txtApellidos.getText());
-        met.setIdequipo(txtidequipo.getText());
+        met.setIdequipo(Integer.parseInt(txtidequipo.getText()));
         met.setCarrera(txtCarrera.getText());
         if(mas.registrar(met)){
             JOptionPane.showMessageDialog(null, "Se han ingresado los datos correctamente");
@@ -155,6 +167,7 @@ public class ingresoJugadores extends javax.swing.JFrame {
         if(!txtCarnet.getText().isEmpty()){
            sjr = new sqlJugadores();       
            sjr.Eliminar(txtCarnet.getText());
+           JOptionPane.showMessageDialog(null, "Se ha eliminado exitosamente el registro del jugador");
        }else{
            JOptionPane.showMessageDialog(null,"Debe de introducir el carnet del jugador para eliminar el registro");
        }
@@ -167,8 +180,9 @@ public class ingresoJugadores extends javax.swing.JFrame {
         if(!txtCarnet.getText().isEmpty() && !txtNombres.getText().isEmpty() && !txtApellidos.getText().isEmpty() && !txtCarrera.getText().isEmpty()){
          sjr = new sqlJugadores();
         
-        jo = new jugadores(txtCarnet.getText().toLowerCase(), txtNombres.getText().toLowerCase(), txtApellidos.getText().toLowerCase(),txtidequipo.getText().toLowerCase(), txtCarrera.getText().toLowerCase());
+        jo = new jugadores(txtCarnet.getText(), txtNombres.getText(), txtApellidos.getText(),Integer.parseInt(txtidequipo.getText()), txtCarrera.getText());
         sjr.updateJugador(jo);   
+        JOptionPane.showMessageDialog(null, "Se han modificado exitosamente los datos del jugador");
         }else{
             JOptionPane.showMessageDialog(null, "Debe de llenar todos los campos de informacion");
         }
@@ -182,7 +196,7 @@ public class ingresoJugadores extends javax.swing.JFrame {
         jo = sjr.buscarJugador(txtCarnet.getText());
         txtNombres.setText(jo.getNombres());
         txtApellidos.setText(jo.getApellidos());
-        txtidequipo.setText(jo.getIdequipo());
+        txtidequipo.setText(String.valueOf(jo.getIdequipo()));
         txtCarrera.setText(jo.getCarrera());
         
       }else{
@@ -197,6 +211,10 @@ public class ingresoJugadores extends javax.swing.JFrame {
         Limpiar();
         
     }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        setVisible(false);
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -244,6 +262,7 @@ public class ingresoJugadores extends javax.swing.JFrame {
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnRegistrar;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JLabel idequipo;
     private javax.swing.JTextField txtApellidos;
     private javax.swing.JFormattedTextField txtCarnet;
