@@ -40,6 +40,7 @@ public class ingresoJugadores extends javax.swing.JFrame {
         btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("JUGADORES");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Titulo.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
