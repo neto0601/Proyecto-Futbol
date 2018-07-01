@@ -78,8 +78,8 @@ private void Bloquear(){
         btnguardarmodificacion = new javax.swing.JButton();
         btncancelar = new javax.swing.JButton();
         txtminuto = new javax.swing.JTextField();
-        txtcarnet = new javax.swing.JTextField();
         btnmenu2 = new javax.swing.JButton();
+        txtcarnet = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HECHOS");
@@ -177,7 +177,6 @@ private void Bloquear(){
             }
         });
         getContentPane().add(txtminuto, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 130, -1));
-        getContentPane().add(txtcarnet, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 130, -1));
 
         btnmenu2.setText("REGRESAR");
         btnmenu2.addActionListener(new java.awt.event.ActionListener() {
@@ -186,6 +185,13 @@ private void Bloquear(){
             }
         });
         getContentPane().add(btnmenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 130, -1));
+
+        try {
+            txtcarnet.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        getContentPane().add(txtcarnet, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 130, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -431,7 +437,7 @@ private void Bloquear(){
     private javax.swing.JLabel lblidpartido;
     private javax.swing.JLabel lblidtipo;
     private javax.swing.JLabel lblminuto;
-    private javax.swing.JTextField txtcarnet;
+    private javax.swing.JFormattedTextField txtcarnet;
     private javax.swing.JTextField txtidhecho;
     private javax.swing.JTextField txtidpartido;
     private javax.swing.JTextField txtidtipo;
