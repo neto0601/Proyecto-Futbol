@@ -39,30 +39,42 @@ public class ingresoJugadores extends javax.swing.JFrame {
         txtCarnet = new javax.swing.JFormattedTextField();
         btnSalir = new javax.swing.JButton();
         btnmenu2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("JUGADORES");
+        setPreferredSize(new java.awt.Dimension(455, 427));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Titulo.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        Titulo.setFont(new java.awt.Font("Britannic Bold", 0, 24)); // NOI18N
+        Titulo.setForeground(new java.awt.Color(255, 255, 255));
         Titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Titulo.setText("Ingrese los datos del jugador");
-        getContentPane().add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(134, 0, 530, 29));
+        getContentPane().add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 340, 29));
 
+        Carnet.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
+        Carnet.setForeground(new java.awt.Color(255, 255, 255));
         Carnet.setText("Carnet:");
-        getContentPane().add(Carnet, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 86, 64, -1));
+        getContentPane().add(Carnet, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 64, -1));
 
+        Nombres.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
+        Nombres.setForeground(new java.awt.Color(255, 255, 255));
         Nombres.setText("Nombres:");
-        getContentPane().add(Nombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 136, 64, -1));
-        getContentPane().add(txtNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(134, 133, 287, -1));
+        getContentPane().add(Nombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 80, 20));
+        getContentPane().add(txtNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 120, 20));
 
+        Apellidos.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
+        Apellidos.setForeground(new java.awt.Color(255, 255, 255));
         Apellidos.setText("Apellidos:");
-        getContentPane().add(Apellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 194, 64, -1));
-        getContentPane().add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(134, 191, 287, -1));
+        getContentPane().add(Apellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 80, -1));
+        getContentPane().add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 120, 20));
 
+        Carrera.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
+        Carrera.setForeground(new java.awt.Color(255, 255, 255));
         Carrera.setText("Carrera:");
-        getContentPane().add(Carrera, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 64, -1));
-        getContentPane().add(txtCarrera, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 287, -1));
+        getContentPane().add(Carrera, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 80, -1));
+        getContentPane().add(txtCarrera, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 120, 20));
 
         btnRegistrar.setText("Registrar");
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
@@ -70,7 +82,7 @@ public class ingresoJugadores extends javax.swing.JFrame {
                 btnRegistrarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 102, 30));
+        getContentPane().add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 120, 20));
 
         btnEliminar.setText("Eliminar");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -78,7 +90,7 @@ public class ingresoJugadores extends javax.swing.JFrame {
                 btnEliminarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 340, 99, 30));
+        getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 360, 120, 20));
 
         btnModificar.setText("Modificar");
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
@@ -86,7 +98,7 @@ public class ingresoJugadores extends javax.swing.JFrame {
                 btnModificarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, 101, 30));
+        getContentPane().add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, 120, 20));
 
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -94,7 +106,7 @@ public class ingresoJugadores extends javax.swing.JFrame {
                 btnBuscarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 98, 30));
+        getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 120, 20));
 
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -102,18 +114,20 @@ public class ingresoJugadores extends javax.swing.JFrame {
                 btnLimpiarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, 102, 30));
+        getContentPane().add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 120, 20));
 
-        idequipo.setText("id equipo");
-        getContentPane().add(idequipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 240, 60, -1));
-        getContentPane().add(txtidequipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 240, 140, -1));
+        idequipo.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
+        idequipo.setForeground(new java.awt.Color(255, 255, 255));
+        idequipo.setText("id equipo:");
+        getContentPane().add(idequipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 90, -1));
+        getContentPane().add(txtidequipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 120, 20));
 
         try {
             txtCarnet.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("UU#####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        getContentPane().add(txtCarnet, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 270, -1));
+        getContentPane().add(txtCarnet, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 120, 20));
 
         btnSalir.setText("Salir");
         btnSalir.setMaximumSize(new java.awt.Dimension(70, 50));
@@ -124,15 +138,18 @@ public class ingresoJugadores extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 340, 110, 30));
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, 120, 20));
 
-        btnmenu2.setText("REGRESAR");
+        btnmenu2.setText("Regresar");
         btnmenu2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnmenu2ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnmenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 400, 130, -1));
+        getContentPane().add(btnmenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, 120, 20));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/jugadoresPS.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -281,6 +298,7 @@ public class ingresoJugadores extends javax.swing.JFrame {
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnmenu2;
     private javax.swing.JLabel idequipo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField txtApellidos;
     private javax.swing.JFormattedTextField txtCarnet;
     private javax.swing.JTextField txtCarrera;

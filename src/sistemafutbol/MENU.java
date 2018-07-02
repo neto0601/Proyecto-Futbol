@@ -37,79 +37,103 @@ public class MENU extends javax.swing.JFrame {
         btnarbitrospartidos = new javax.swing.JButton();
         btnhechos = new javax.swing.JButton();
         lblmenu = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MENU PRICIPAL");
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnequipos.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
         btnequipos.setText("EQUIPOS");
         btnequipos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnequiposActionPerformed(evt);
             }
         });
-        getContentPane().add(btnequipos, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 130, -1));
+        getContentPane().add(btnequipos, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 175, 25));
 
+        btnjugadores.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
         btnjugadores.setText("JUGADORES");
         btnjugadores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnjugadoresActionPerformed(evt);
             }
         });
-        getContentPane().add(btnjugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 130, -1));
+        getContentPane().add(btnjugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 175, 25));
 
+        btncanchas.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
         btncanchas.setText("CANCHAS");
         btncanchas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btncanchasActionPerformed(evt);
             }
         });
-        getContentPane().add(btncanchas, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 130, -1));
+        getContentPane().add(btncanchas, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 175, 25));
 
+        btnarbitro.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
         btnarbitro.setText("ARBITROS");
         btnarbitro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnarbitroActionPerformed(evt);
             }
         });
-        getContentPane().add(btnarbitro, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 130, -1));
+        getContentPane().add(btnarbitro, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 175, 25));
 
+        btntipohrchos.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
         btntipohrchos.setText("TIPO DE HECHOS");
         btntipohrchos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btntipohrchosActionPerformed(evt);
             }
         });
-        getContentPane().add(btntipohrchos, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 160, -1));
+        getContentPane().add(btntipohrchos, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 175, 25));
 
+        btnpartidos.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
         btnpartidos.setText("PARTIDOS");
         btnpartidos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnpartidosActionPerformed(evt);
             }
         });
-        getContentPane().add(btnpartidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 160, -1));
+        getContentPane().add(btnpartidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 175, 25));
 
+        btnarbitrospartidos.setFont(new java.awt.Font("Britannic Bold", 0, 12)); // NOI18N
         btnarbitrospartidos.setText("ARBITROS POR PARTIDOS");
         btnarbitrospartidos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnarbitrospartidosActionPerformed(evt);
             }
         });
-        getContentPane().add(btnarbitrospartidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, -1, -1));
+        getContentPane().add(btnarbitrospartidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 175, 25));
 
+        btnhechos.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
         btnhechos.setText("HECHOS");
         btnhechos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnhechosActionPerformed(evt);
             }
         });
-        getContentPane().add(btnhechos, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 160, -1));
+        getContentPane().add(btnhechos, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 175, 25));
 
-        lblmenu.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lblmenu.setFont(new java.awt.Font("Britannic Bold", 3, 36)); // NOI18N
+        lblmenu.setForeground(new java.awt.Color(255, 255, 255));
         lblmenu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblmenu.setText("B I E N V E N I D O");
-        getContentPane().add(lblmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 210, -1));
+        getContentPane().add(lblmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 390, -1));
+
+        jButton1.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
+        jButton1.setText("SALIR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 175, 25));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuPS.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -162,6 +186,12 @@ public class MENU extends javax.swing.JFrame {
        dispose();
     }//GEN-LAST:event_btnhechosActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        System.exit(0);
+        
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -206,6 +236,8 @@ public class MENU extends javax.swing.JFrame {
     private javax.swing.JButton btnjugadores;
     private javax.swing.JButton btnpartidos;
     private javax.swing.JButton btntipohrchos;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblmenu;
     // End of variables declaration//GEN-END:variables
 }

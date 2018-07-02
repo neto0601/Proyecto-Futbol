@@ -87,47 +87,54 @@ public class frmpartidos extends javax.swing.JFrame {
         btnguardarmodificacion = new javax.swing.JButton();
         btncancelar = new javax.swing.JButton();
         btnmenu2 = new javax.swing.JButton();
+        lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PARTIDOS");
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblidpartido.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         lblidpartido.setText("ID PARTIDO:");
         getContentPane().add(lblidpartido, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
-        getContentPane().add(txtidpartido, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 50, -1));
+        getContentPane().add(txtidpartido, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 50, -1));
 
+        lblequipol.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         lblequipol.setText("ID EQUIPO LOCAL:");
-        getContentPane().add(lblequipol, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+        getContentPane().add(lblequipol, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         txtequipol.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtequipolKeyTyped(evt);
             }
         });
-        getContentPane().add(txtequipol, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 130, -1));
+        getContentPane().add(txtequipol, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 120, 20));
 
+        lblequipov.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         lblequipov.setText("ID EQUIPO VISITANTE:");
-        getContentPane().add(lblequipov, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, 20));
+        getContentPane().add(lblequipov, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, 20));
 
         txtequipov.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtequipovKeyTyped(evt);
             }
         });
-        getContentPane().add(txtequipov, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 130, -1));
+        getContentPane().add(txtequipov, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 120, 20));
 
+        lbidcancha.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         lbidcancha.setText("ID CANCHA:");
-        getContentPane().add(lbidcancha, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
+        getContentPane().add(lbidcancha, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
 
         txtidcancha.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtidcanchaKeyTyped(evt);
             }
         });
-        getContentPane().add(txtidcancha, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 190, -1));
+        getContentPane().add(txtidcancha, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 120, 20));
 
+        lblfecha.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         lblfecha.setText("FECHA:");
-        getContentPane().add(lblfecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, 20));
+        getContentPane().add(lblfecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, 20));
 
         try {
             ftxtFecha.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##-##-####")));
@@ -139,74 +146,87 @@ public class frmpartidos extends javax.swing.JFrame {
                 ftxtFechaActionPerformed(evt);
             }
         });
-        getContentPane().add(ftxtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 100, -1));
+        getContentPane().add(ftxtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 120, 20));
 
+        lblformatoF.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
         lblformatoF.setText("( dd-MM-yyyy )");
-        getContentPane().add(lblformatoF, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 80, -1));
+        getContentPane().add(lblformatoF, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 90, -1));
 
+        btnnuevo.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
         btnnuevo.setText("NUEVO");
         btnnuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnnuevoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 120, -1));
+        getContentPane().add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 120, 20));
 
+        btnguardar.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
         btnguardar.setText("GUARDAR");
         btnguardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnguardarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, -1, -1));
+        getContentPane().add(btnguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 120, 20));
 
+        btnbuscar.setFont(new java.awt.Font("Britannic Bold", 0, 12)); // NOI18N
         btnbuscar.setText("BUSCAR");
         btnbuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnbuscarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 120, -1));
+        getContentPane().add(btnbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 80, 20));
 
+        btneliminar.setFont(new java.awt.Font("Britannic Bold", 0, 11)); // NOI18N
         btneliminar.setText("ELIMINAR");
         btneliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btneliminarActionPerformed(evt);
             }
         });
-        getContentPane().add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, -1, -1));
+        getContentPane().add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 340, 80, 20));
 
+        btnmodificar.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
         btnmodificar.setText("MODIFICAR");
         btnmodificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnmodificarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, -1, -1));
+        getContentPane().add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 310, 120, 20));
 
+        btnguardarmodificacion.setFont(new java.awt.Font("Britannic Bold", 0, 12)); // NOI18N
         btnguardarmodificacion.setText("GUARDAR MODIFICACIÓN");
         btnguardarmodificacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnguardarmodificacionActionPerformed(evt);
             }
         });
-        getContentPane().add(btnguardarmodificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 220, 190, -1));
+        getContentPane().add(btnguardarmodificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 170, 20));
 
+        btncancelar.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
         btncancelar.setText("CANCELAR");
         btncancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btncancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(btncancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 90, -1));
+        getContentPane().add(btncancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, 120, 20));
 
+        btnmenu2.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
         btnmenu2.setText("REGRESAR");
         btnmenu2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnmenu2ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnmenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 130, -1));
+        getContentPane().add(btnmenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, 120, 20));
+
+        lblFondo.setFont(new java.awt.Font("Britannic Bold", 0, 12)); // NOI18N
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/partidosPS.jpg"))); // NOI18N
+        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -561,6 +581,7 @@ public class frmpartidos extends javax.swing.JFrame {
     private javax.swing.JButton btnnuevo;
     private javax.swing.JFormattedTextField ftxtFecha;
     private javax.swing.JLabel lbidcancha;
+    private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblequipol;
     private javax.swing.JLabel lblequipov;
     private javax.swing.JLabel lblfecha;

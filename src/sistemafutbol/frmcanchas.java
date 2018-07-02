@@ -70,98 +70,117 @@ public class frmcanchas extends javax.swing.JFrame {
         btnguardarmodificacion = new javax.swing.JButton();
         btncancelar = new javax.swing.JButton();
         btnmenu2 = new javax.swing.JButton();
+        lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CANCHAS");
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblidcancha.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
+        lblidcancha.setForeground(new java.awt.Color(255, 255, 255));
         lblidcancha.setText("ID CANCHA:");
-        getContentPane().add(lblidcancha, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 24, -1, -1));
-        getContentPane().add(txtidcancha, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 21, 51, -1));
+        getContentPane().add(lblidcancha, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
+        getContentPane().add(txtidcancha, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 50, 20));
 
+        lblnombre.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
+        lblnombre.setForeground(new java.awt.Color(255, 255, 255));
         lblnombre.setText("NOMBRE:");
-        getContentPane().add(lblnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 50, -1, -1));
+        getContentPane().add(lblnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, -1));
 
         txtnombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtnombreKeyTyped(evt);
             }
         });
-        getContentPane().add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 47, 174, -1));
+        getContentPane().add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 120, 20));
 
+        lblubicacion.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
+        lblubicacion.setForeground(new java.awt.Color(255, 255, 255));
         lblubicacion.setText("UBICACIÓN:");
-        getContentPane().add(lblubicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 81, -1, -1));
+        getContentPane().add(lblubicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, 20));
 
         txtubicacion.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtubicacionKeyTyped(evt);
             }
         });
-        getContentPane().add(txtubicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 78, 174, -1));
+        getContentPane().add(txtubicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 120, 20));
 
+        btnguardar.setFont(new java.awt.Font("Britannic Bold", 0, 11)); // NOI18N
         btnguardar.setText("GUARDAR");
         btnguardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnguardarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, -1, -1));
+        getContentPane().add(btnguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 80, 20));
 
+        btnnuevo.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
         btnnuevo.setText("NUEVO");
         btnnuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnnuevoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 120, -1));
+        getContentPane().add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 120, 20));
 
+        btnbuscar.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
         btnbuscar.setText("BUSCAR");
         btnbuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnbuscarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 120, -1));
+        getContentPane().add(btnbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 120, 20));
 
+        btneliminar.setFont(new java.awt.Font("Britannic Bold", 0, 11)); // NOI18N
         btneliminar.setText("ELIMINAR");
         btneliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btneliminarActionPerformed(evt);
             }
         });
-        getContentPane().add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, -1, -1));
+        getContentPane().add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 340, 80, 20));
 
+        btnmodificar.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
         btnmodificar.setText("MODIFICAR");
         btnmodificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnmodificarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, -1, -1));
+        getContentPane().add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 310, 120, 20));
 
+        btnguardarmodificacion.setFont(new java.awt.Font("Britannic Bold", 0, 12)); // NOI18N
         btnguardarmodificacion.setText("GUARDAR MODIFICACIÓN");
         btnguardarmodificacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnguardarmodificacionActionPerformed(evt);
             }
         });
-        getContentPane().add(btnguardarmodificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 190, -1));
+        getContentPane().add(btnguardarmodificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 170, 20));
 
+        btncancelar.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
         btncancelar.setText("CANCELAR");
         btncancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btncancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(btncancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 90, -1));
+        getContentPane().add(btncancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, 120, 20));
 
+        btnmenu2.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
         btnmenu2.setText("REGRESAR");
         btnmenu2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnmenu2ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnmenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 130, -1));
+        getContentPane().add(btnmenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, 120, 20));
+
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estadioPS.jpg"))); // NOI18N
+        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -374,6 +393,7 @@ public class frmcanchas extends javax.swing.JFrame {
     private javax.swing.JButton btnmenu2;
     private javax.swing.JButton btnmodificar;
     private javax.swing.JButton btnnuevo;
+    private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblidcancha;
     private javax.swing.JLabel lblnombre;
     private javax.swing.JLabel lblubicacion;
