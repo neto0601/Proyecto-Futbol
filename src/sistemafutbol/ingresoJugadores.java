@@ -127,6 +127,7 @@ public class ingresoJugadores extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtCarnet.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         getContentPane().add(txtCarnet, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 120, 20));
 
         btnSalir.setText("Salir");
@@ -195,6 +196,7 @@ public class ingresoJugadores extends javax.swing.JFrame {
            sjr = new sqlJugadores();       
            sjr.Eliminar(txtCarnet.getText());
            JOptionPane.showMessageDialog(null, "Se ha eliminado exitosamente el registro del jugador");
+           Limpiar();
        }else{
            JOptionPane.showMessageDialog(null,"Debe de introducir el carnet del jugador para eliminar el registro");
        }
@@ -210,6 +212,7 @@ public class ingresoJugadores extends javax.swing.JFrame {
         jo = new jugadores(txtCarnet.getText(), txtNombres.getText(), txtApellidos.getText(),Integer.parseInt(txtidequipo.getText()), txtCarrera.getText());
         sjr.updateJugador(jo);   
         JOptionPane.showMessageDialog(null, "Se han modificado exitosamente los datos del jugador");
+        Limpiar();
         }else{
             JOptionPane.showMessageDialog(null, "Debe de llenar todos los campos de informacion");
         }
